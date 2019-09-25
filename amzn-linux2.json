@@ -1,0 +1,23 @@
+{
+    "variables": {
+      "profile": ""
+    },
+    "builders": [{
+      "type": "amazon-ebs",
+      "profile": "{{user `profile`}}",
+      "region": "eu-central-1",
+      "source_ami": "ami-00aa4671cbf840d82",
+      "instance_type": "t2.micro",
+      "tags": {
+           "Name": "amzn2-optimized-cis-benchmark"
+      },
+      "ssh_username": "ec2-user",
+      "ami_name": "amzn2-optimized-cis-benchmark {{timestamp}}"
+    }],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "amzn-linux2.sh"
+        }
+    ]
+}
