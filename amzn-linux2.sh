@@ -16,7 +16,7 @@ sed -i -e "s/#PermitUserEnvironment no/PermitUserEnvironment no/g" /etc/ssh/sshd
 sed -i -e "s/#HostbasedAuthentication no/HostbasedAuthentication no/g" /etc/ssh/sshd_config
 sed -i -e "s/#X11Forwarding yes/X11Forwarding no/g" /etc/ssh/sshd_config
 sed -i -e "s/X11Forwarding yes/X11Forwarding no/g" /etc/ssh/sshd_config
-sed -i -e "s/SELINUX=disabled/SELINUX=enforcing/g" /etc/ssh/sshd_config
+sed -i -e "s/SELINUX=disabled/SELINUX=enforcing/g" /etc/selinux/config
 sed -i -e "s/#MaxAuthTries 6/MaxAuthTries 4/g" /etc/ssh/sshd_config
 EOF
 
